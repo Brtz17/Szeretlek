@@ -1,0 +1,198 @@
+
+html, body {
+    background: linear-gradient(to bottom, rgb(253, 185, 250), rgb(255, 110, 207));
+    margin: 0;
+    overflow-x: hidden;
+    min-width: 325px;
+    font-size: 6.25%;
+}
+
+/* Header */
+
+header {
+    position: relative;
+    box-sizing: border-box;
+    height: 70px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: rgb(255, 112, 172);
+    border: solid 1px rgba(16, 16, 16, 0.9);
+    border-top: none;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+}
+
+header .inner{
+    width: 80%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+header .logo{
+    display: table;
+    height: 100%;
+    float: left;
+}
+
+header .logo div{
+    height: 100%;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes nagyszív {
+    0% {scale: 1;}
+    37.5% {scale: 1.25;}
+    75% {scale: 1;}
+    100% {scale: 1;}
+}
+
+#szív{
+    height: 40px;
+    width: auto;
+    margin: 10px 0; /* Optical alignment of the logo */
+}
+
+header .logo div:hover #szív {
+    animation: nagyszív 750ms infinite;
+}
+
+@keyframes ekgMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -150px 0;
+    }
+}
+
+#ekg {
+    position: absolute;
+    left: -150px;
+    top: -20px;
+    width: 150px;
+    background: url('ekg.png') repeat-x;
+    background-size: 150px ;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+    animation: ekgMove 2.25s linear infinite;
+}
+
+header .logo div:hover #ekg {
+    opacity: 1;
+}
+
+header nav{
+    float: right;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header nav ul {
+    list-style-type: none; /* Felsorolásjelek eltávolítása */
+    margin: 0;             /* Külső margó eltávolítása */
+    padding: 0;            /* Belső térköz eltávolítása */
+}
+
+header nav li{
+    display: table;
+    height: 100%;
+    float: left;
+    margin-right: 30px;
+}
+
+header nav li:last-of-type{
+    margin-right: 0;
+}
+
+header nav span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    width: max-content;
+    font-size: 16rem;
+}
+
+header nav a::after {
+    content: "";
+    background: white;
+    border-radius: 10px;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 100ms;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Homepage */
+
+
+ .tartalom {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+#koszon {
+    font-size: 100rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+#koszon p {
+    font-size: 18rem;
+    text-align: center;
+    transition: 1s;
+    text-transform: none;
+}
+
+#koszon:hover {
+    color: rgb(255, 0, 157);
+}
+
+@media (max-width: 480px) {
+    #koszon {
+      font-size: 24rem;
+      text-transform: uppercase;
+    }
+  }
+
+/* Galéria */
+
+#galeria-box {
+    width: 100vw;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    font-size: 40rem;
+}
